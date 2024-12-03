@@ -10,6 +10,13 @@ abstract class Vehicle {
     String plateNumber;
     double pricePerDay;
 
+    public Vehicle(String model, String plateNumber, double pricePerDay) {
+        this.model = model;
+        this.plateNumber = plateNumber;
+        this.pricePerDay = pricePerDay;
+    }
+
+
     // metoder
     // getters och setters för alla attribut
     public void setModel(String model) {
