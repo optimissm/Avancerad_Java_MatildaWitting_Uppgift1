@@ -35,7 +35,17 @@ public Car(String model, String plateNumber, double pricePerDay, int doors, int 
 
     @Override
     public double calcRentCost(int daysRented) {
-        return daysRented * this.getPricePerDay();
+        // return daysRented * this.getPricePerDay();
+    }
+
+    @Override
+    public void rentOut(int daysRented){
+    if (!isRented) {
+        isRented = true;
+        System.out.println("Bilen är uthyrd i " + daysRented + " dagar");
+    } else {
+        System.out.println("Fordonet är redan uthyrt");
+    }
     }
 
 }
