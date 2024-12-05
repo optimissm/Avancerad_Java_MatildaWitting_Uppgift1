@@ -6,19 +6,19 @@ package CarRental;
 // double dailyRentalPrice
 abstract class Vehicle {
 
+    // detta är de egenskaper som alla fordon ska ha
     String model;
     String plateNumber;
     double pricePerDay;
 
+    // här är konstruktorn till de föregående egenskaperna
     public Vehicle(String model, String plateNumber, double pricePerDay) {
         this.model = model;
         this.plateNumber = plateNumber;
         this.pricePerDay = pricePerDay;
     }
 
-
-    // metoder
-    // getters och setters för alla attribut
+    // setters och getters för alla egenskaper
     public void setModel(String model) {
         this.model = model;
     }
@@ -43,9 +43,9 @@ abstract class Vehicle {
         return pricePerDay;
     }
 
-    // en abstract metod doubleCalculateCost(int days)
+    // en abstrakt klass
     // som beräknar kostnad/dag
-    // som alla fordonstyper behöver
+    // alla fordonstyper behöver implementera denna metod
     public abstract double calcRentCost(int daysRented);
 
 
