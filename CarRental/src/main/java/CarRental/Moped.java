@@ -3,9 +3,6 @@ package CarRental;
 public class Moped extends Vehicle implements Rentable {
 
     // specifika attribut
-    // boolean helmetIncluded
-    // int maxSpeed
-
     private boolean helmetIncluded;
     private int maxSpeed;
 
@@ -13,20 +10,6 @@ public class Moped extends Vehicle implements Rentable {
         super(model, plateNumber, pricePerDay);
 
         this.helmetIncluded = helmetIncluded;
-        this.maxSpeed = maxSpeed;
-    }
-
-    public boolean isHelmetIncluded() {
-        return helmetIncluded;
-    }
-    public void setHelmetIncluded(boolean helmetIncluded) {
-        this.helmetIncluded = helmetIncluded;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-    public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
@@ -45,12 +28,6 @@ public class Moped extends Vehicle implements Rentable {
     @Override
     public void rentOut(int daysRented) {
         setRented(true);
-
-    }
-
-    @Override
-    public void returnVehicle() {
-        setRented(false);
 
     }
 

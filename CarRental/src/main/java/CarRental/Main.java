@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         // sätter in en ny scanner
         Scanner scan = new Scanner(System.in);
-
+        // kopplar till RentalManager
         RentalManager manager = new RentalManager();
 
         // tillagda fordon
@@ -85,7 +85,7 @@ public class Main {
 
                         if (returnIndex >= 0 && returnIndex < manager.getAllVehicles().size()) {
                             Rentable vehicle = manager.getVehicle(returnIndex);
-                            if (!vehicle.isRented()){
+                            if (vehicle.isRented()){
                                 System.out.println("Hur många dagar hyrdes fordonet? ");
                                 int returnDays = scan.nextInt();
 
@@ -108,7 +108,6 @@ public class Main {
                         System.out.println("Tack för besöket, välkommen åter!");
                         // avslutar hela programmet
                         System.exit(0);
-
 
                     default:
                         System.out.println("Fel, vänligen prova igen... ");

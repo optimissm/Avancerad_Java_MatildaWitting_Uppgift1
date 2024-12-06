@@ -70,7 +70,6 @@ public class RentalManager {
     public void returnVehicle(int id){
         Rentable vehicle = allVehicles.get(id);
         if (vehicle.isRented()) {
-            vehicle.returnVehicle();
             System.out.println("Fordonet har returnerats.");
         } else {
             System.out.println("Detta är inte ett uthyrt fordon. " +

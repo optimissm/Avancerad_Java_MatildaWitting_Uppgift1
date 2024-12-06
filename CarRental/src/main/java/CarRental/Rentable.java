@@ -10,9 +10,6 @@ public interface Rentable {
     // en för att hyra ut fordon
     void rentOut(int daysRented);
 
-    // en för att returnera fordon
-    void returnVehicle();
-
     // en för att se om den är uthyrd
     boolean isRented();
 

@@ -45,7 +45,6 @@ abstract class Vehicle {
         isRented = rented;
     }
 
-    // K. fattar inte vart denna kommer in än...
     public abstract double calculateRentalCost(int daysRented);
 
 

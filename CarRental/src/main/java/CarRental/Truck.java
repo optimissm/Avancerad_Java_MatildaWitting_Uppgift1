@@ -2,22 +2,11 @@ package CarRental;
 
 public class Truck extends Vehicle implements Rentable {
 
-    // attribut
-    // double maxLoad
-    //
-
     private double maxLoad;
 
     public Truck(String model, String plateNumber, double pricePerDay, double maxLoad) {
         super(model, plateNumber, pricePerDay);
 
-        this.maxLoad = maxLoad;
-    }
-
-    public double getMaxLoad() {
-        return maxLoad;
-    }
-    public void setMaxLoad(double maxLoad) {
         this.maxLoad = maxLoad;
     }
 
@@ -30,16 +19,9 @@ public class Truck extends Vehicle implements Rentable {
                 ", Uthyrd: " + (getIsRented() ? "Ja" : "Nej");
     }
 
-
     @Override
     public void rentOut(int daysRented) {
         setRented(true);
-
-    }
-
-    @Override
-    public void returnVehicle() {
-        setRented(false);
 
     }
 

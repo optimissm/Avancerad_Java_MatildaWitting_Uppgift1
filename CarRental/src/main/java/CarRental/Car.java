@@ -27,16 +27,9 @@ public class Car extends Vehicle implements Rentable{
                 ", Uthyrd: " + (getIsRented() ? "Ja" : "Nej");
     }
 
-
     @Override
     public void rentOut(int daysRented) {
         setRented(true);
-
-    }
-
-    @Override
-    public void returnVehicle() {
-        setRented(false);
 
     }
 
@@ -54,4 +47,6 @@ public class Car extends Vehicle implements Rentable{
     public double calculateRentalCost(int daysRented) {
         return 0;
     }
+
+
 }
