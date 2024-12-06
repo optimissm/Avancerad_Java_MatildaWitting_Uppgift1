@@ -6,22 +6,19 @@ package CarRental;
 // som kan implementeras av klasserna
 // det är de kontrakt som klasserna måste följa
 public interface Rentable {
-    // metoder
-    // void rentVehicle
-    // void returnVehicle
-    // double calcRentCost(int days)
-
-    // sätter in en metod för att hyra ut ett fordon
+    // metoder att placera ut i Rentable
+    // en för att hyra ut fordon
     void rentOut(int daysRented);
 
+    // en för att returnera fordon
     void returnVehicle();
 
-    double calcRentCost(int daysRented);
+    // en för att se om den är uthyrd
+    boolean isRented();
 
-//    // så att jag kan returnera fordonet
-//    void returnVehicle();
-//
-//    // och beräkna kostnaden
-//    double calculateCost(int daysRented);
+    // en för att beräkna kostnaden
+    double calculateRentCost(int daysRented);
+
+    // en för att kolla om den är uthyrd eller inte?
 
 }

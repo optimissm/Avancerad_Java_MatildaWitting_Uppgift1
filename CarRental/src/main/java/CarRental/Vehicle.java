@@ -1,53 +1,52 @@
 package CarRental;
 
-// abstrakt klass med attribut som
-// String model
-// String plateNumber
-// double dailyRentalPrice
+// abstract class för att alla sub klasser ska kunna ärva av en och samma
+// utan att jag behöver duplicera samma attribut och metoder
 abstract class Vehicle {
 
-    // detta är de egenskaper som alla fordon ska ha
-    String model;
-    String plateNumber;
-    double pricePerDay;
+    // då sätter vi in alla gemensamma attribut här
+    private String model;
+    private String plateNumber;
+    private double pricePerDay;
 
-    // här är konstruktorn till de föregående egenskaperna
+    // är fordonet uthyrt eller inte?
+    private boolean isRented;
+
     public Vehicle(String model, String plateNumber, double pricePerDay) {
         this.model = model;
         this.plateNumber = plateNumber;
         this.pricePerDay = pricePerDay;
+        // börjar med att sätta false, för just nu är den inte uthyrd
+        this.isRented = false;
     }
 
-    // setters och getters för alla egenskaper
-    public void setModel(String model) {
-        this.model = model;
-    }
+    // osäker på setters
+    // men tror inte det behövs då ingenting ska ändras
+    // getters verkar dock användas so here we go
 
     public String getModel() {
         return model;
-    }
-
-    public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
     }
 
     public String getPlateNumber() {
         return plateNumber;
     }
 
-    public void setPricePerDay(double pricePerDay) {
-        this.pricePerDay = pricePerDay;
-    }
-
     public double getPricePerDay() {
         return pricePerDay;
     }
 
-    // en abstrakt klass
-    // som beräknar kostnad/dag
-    // alla fordonstyper behöver implementera denna metod
-    public abstract double calcRentCost(int daysRented);
+    // kan vara så att isRented behöver både setter och getter
+    // då jag vill kunna ändra status efter hur utlånad den är
+    public boolean getIsRented() {
+        return isRented;
+    }
+    public void setRented(boolean rented) {
+        isRented = rented;
+    }
 
+    // K. fattar inte vart denna kommer in än...
+    public abstract double calculateRentalCost(int daysRented);
 
 
 }

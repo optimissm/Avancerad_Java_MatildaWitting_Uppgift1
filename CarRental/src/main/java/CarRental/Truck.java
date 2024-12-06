@@ -1,6 +1,6 @@
 package CarRental;
 
-public class Truck extends Vehicle {
+public class Truck extends Vehicle implements Rentable {
 
     // attribut
     // double maxLoad
@@ -21,8 +21,42 @@ public class Truck extends Vehicle {
         this.maxLoad = maxLoad;
     }
 
-        @Override
-    public double calcRentCost(int daysRented) {
-        return daysRented * this.getPricePerDay();
+    @Override
+    public String toString() {
+        return "Lätt lastbil: " + getModel() +
+                ", Registreringsnummer: " + getPlateNumber() +
+                ", Pris per dag: " + getPricePerDay() + "SEK" +
+                ", Max last: " + maxLoad +
+                ", Uthyrd: " + (getIsRented() ? "Ja" : "Nej");
     }
+
+
+    @Override
+    public void rentOut(int daysRented) {
+        setRented(true);
+
+    }
+
+    @Override
+    public void returnVehicle() {
+        setRented(false);
+
+    }
+
+    @Override
+    public boolean isRented() {
+        return getIsRented();
+    }
+
+    @Override
+    public double calculateRentCost(int daysRented) {
+        return daysRented * getPricePerDay();
+    }
+
+    @Override
+    public double calculateRentalCost(int daysRented) {
+        return 0;
+    }
+
+
 }

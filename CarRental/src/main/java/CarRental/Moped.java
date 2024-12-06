@@ -1,6 +1,6 @@
 package CarRental;
 
-public class Moped extends Vehicle {
+public class Moped extends Vehicle implements Rentable {
 
     // specifika attribut
     // boolean helmetIncluded
@@ -30,8 +30,44 @@ public class Moped extends Vehicle {
         this.maxSpeed = maxSpeed;
     }
 
+    // override så att car kan funka från abstract vehicle
     @Override
-    public double calcRentCost(int daysRented) {
-        return daysRented * this.getPricePerDay();
+    public String toString() {
+        return "Moped: " + getModel() +
+                ", Registreringsnummer: " + getPlateNumber() +
+                ", Pris per dag: " + getPricePerDay() + "SEK" +
+                ", Hjälm ingår: " + helmetIncluded +
+                ", Maxfart: " + maxSpeed +
+                ", Uthyrd: " + (getIsRented() ? "Ja" : "Nej");
     }
+
+
+    @Override
+    public void rentOut(int daysRented) {
+        setRented(true);
+
+    }
+
+    @Override
+    public void returnVehicle() {
+        setRented(false);
+
+    }
+
+    @Override
+    public boolean isRented() {
+        return getIsRented();
+    }
+
+    @Override
+    public double calculateRentCost(int daysRented) {
+        return daysRented * getPricePerDay();
+    }
+
+    @Override
+    public double calculateRentalCost(int daysRented) {
+        return 0;
+    }
+
+
 }

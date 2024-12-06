@@ -1,120 +1,57 @@
 
 package CarRental;
 
-import java.io.Serializable;
+public class Car extends Vehicle implements Rentable{
+    // vad skiljer då bilarna åt
+    // final då detta inte ändras
+    private final int doors;
+    private final int seats;
 
-public class Car extends Vehicle implements Rentable {
-    // detta är det som urskiljer bilarna från de andra fordonen
-    // och från varandra
-    private int doors;
-    private int seats;
+    public Car(String model, String plateNumber,
+               double pricePerDay, int doors, int seats) {
+        super(model, plateNumber, pricePerDay);
 
-    // för att hålla koll på om bilen är uthyrd eller inte
-    private boolean isRented;
+        this.doors = doors;
+        this.seats = seats;
 
-    // Konstruktor till Car
-    // så att vi kan skapa dörrar och säten
-public Car(String model, String plateNumber,
-           double pricePerDay, int doors,
-           int seats) {
-    // super är det som är för alla "den starkaste" som superman
-    // och detta skickas till Vehicle för initialisering
-    super(model, plateNumber, pricePerDay);
-
-    this.doors = doors;
-    this.seats = seats;
-    // för att as of right now så är inte bilen uthyrd
-    this.isRented = false;
     }
 
-    // setters och getters som vanligt till konstruktorn
-    // men eftersom att dörrar och platser inte förändras
-    // så är det onödigt
-//    public int getDoors() {
-//    return doors;
-//    }
-//
-//    public void setDoors(int doors) {
-//    this.doors = doors;
-//    }
-//
-//    public int getSeats() {
-//    return seats;
-//    }
-//
-//    public void setSeats(int seats) {
-//    this.seats = seats;
-//    }
+    // override så att car kan funka från abstract vehicle
+    @Override
+    public String toString() {
+        return "Bil: " + getModel() +
+                ", Registreringsnummer: " + getPlateNumber() +
+                ", Pris per dag: " + getPricePerDay() + "SEK" +
+                ", Antal dörrar: " + doors +
+                ", Antal platser: " + seats +
+                ", Uthyrd: " + (getIsRented() ? "Ja" : "Nej");
+    }
+
 
     @Override
     public void rentOut(int daysRented) {
+        setRented(true);
 
     }
 
     @Override
     public void returnVehicle() {
-        if (isRented) {
-            isRented = false;
-            System.out.println("Fordonet har returnerats.");
-        } else {
-            System.out.println("Fordonet är inte uthyrt.");
-        }
+        setRented(false);
+
     }
 
     @Override
-    public double calcRentCost(int daysRented) {
+    public boolean isRented() {
+        return getIsRented();
+    }
+
+    @Override
+    public double calculateRentCost(int daysRented) {
         return daysRented * getPricePerDay();
     }
 
     @Override
-    public String toString() {
-        return "Bilmodell: " + getModel() +
-                ", Registreringsnummer: " + getPlateNumber() +
-                ", Pris per dag: " + getPricePerDay() + " SEK" +
-                ", Dörrar: " + doors +
-                ", Platser: " + seats +
-                ", Uthyrd: " + (isRented ? "Ja" : "Nej");
+    public double calculateRentalCost(int daysRented) {
+        return 0;
     }
-
-
-
-    // implementerar den abstrakta metoden calcRentCost
-    // tar emot hur många dagar fordonet hyrts
-    // och beräknar totala kostnaden
-//    @Override
-//    public double calcRentCost(int daysRented) {
-//
-//        return daysRented * this.getPricePerDay();
-//
-//    }
-//
-//    // eftersom klassen implementerar interface får vi ha en override
-//    @Override
-//    public void rentOut(int daysRented) {
-//
-//        System.out.println("Rent out for " + daysRented + " days");
-//
-//
-//    }
-//
-//    @Override
-//    public void returnVehicle() {
-//
-//    }
-//
-//    @Override
-//    public double calculateCost(int daysRented) {
-//        return 0;
-//    }
-
-//    @Override
-//    public void rentOut(int daysRented){
-//    if (!isRented) {
-//        isRented = true;
-//        System.out.println("Bilen är uthyrd i " + daysRented + " dagar");
-//    } else {
-//        System.out.println("Fordonet är redan uthyrt");
-//    }
-//    }
-
 }
