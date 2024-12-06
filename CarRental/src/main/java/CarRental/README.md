@@ -1,54 +1,24 @@
-# Virtuell biluthyrning
-*** 
-## Att inkkludera i en README
-* Projekt titel
-* Beskrivning av projektet
-* Table of Contents
-* Technologies Used
-* Requirements
-* Install instructions
-* Usage instructions
-* Documentation
-* Visuals
-* Support info
-* Project Roadmap
-* Project status
-* Contribution Guidelines
-* Acknowledgements
-* License info
-* Conclusion
-* FAQ
+# Virtuell uthyrning
+***
+### Beskrivning av projektet  
+Detta är ett virtuellt biluthyrningsprogram. Du kan 
+1. Se alla våra fordon
+2. Hyra ett fordon
+3. Returnera ett fordon
+4. Avsluta
 
+Problem med återlämning av fordon behöver åtgärdas, då just nu kan alla fordon 
+(oavsett om de är uthyrda eller inte) lämnas tillbaka.  
+Jag har använt Java för att skriva detta program, GitHub för att spara mitt repository
+och Git för att ladda upp mitt program samt förändringar längs vägen.
 
-# Uthyrning
-Börjar som vanligt om tiotusengånger så jag vet inte
-vad jag gör längre... men fuck aina.
+### Användning av programmet
+Ingen installation krävs, programmet körs direkt i console  
+Du startatr programmet genom att köra det från main och sedan väljer du alternativ
+(1-4) i console och svarar med siffror vad det är du vill göra. 
 
-Började från början med min main och skrev en gnutta pseudokod
+### För dokumentation 
+Se bifogat mail med titel "Dokumentation uppgift 1"
 
-Implementerar sakta men säkert metoder
-från tidigare arbeten såsom de andra projekt jag gjort för uthyrning
-samt den butik vi gjorde i förra kursen
-
-Nu har jag gjort klart min main
-
-Och min Vehicle class
-
-Nu har jag skapat min RentalManager och lagt
-in en lista så att jag kan få ut alla mina fordon
-
-Jag har också skapat en Rentable Interface
-
-Nu jobbar jag med att få min switch att fungera som jag vill.  
-Steg ett och fyra fungerar som jag vill, så bara de svåraste grejorna kvar...
-
-Lagt till try/catch samt if satser i main för att
-förhindra att programmet krashar  
-Har också ordnad ett problem i case 2 så att valet av fordon blir korrekt  
-Behöver fixa samma problem i case 3 också...
-
-Hade velat göra fortsatta ändringar i case 3
-
-Använder mig inte av så många getters och setters, då de flesta 
-attribut är "final" och inte kommer att förändras från användaren. 
-
+### Support info
+matilda.witting@gritacademy.se
